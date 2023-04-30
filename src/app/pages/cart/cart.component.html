@@ -1,0 +1,17 @@
+<h1 style="text-align: center">Ticket cart</h1>
+<div *ngFor="let ticket of tickets;index as i;" class="center"
+     style="width: 75%; padding: 10px; box-shadow: 5px 10px 10px #aaaaaa;">
+  <br/>
+  <div *ngFor="let tick of ticket;index as j;">
+    <div *ngFor="let t of tick;index as k;">
+      <p *ngIf='k==1' class="center">{{tickets[i][0][1]}}</p>
+      <img *ngIf='k==0' class="center" height="200" src="{{tickets[i][0]}}}" width="200">
+    </div>
+  </div>
+  <p class="center">{{tickets[i][0][4]|date: 'yyyy.MM.dd. EEEE, HH:mm z': 'UTC+2'}}</p>
+  <p class="center">Price: {{tickets[i][0][3]}}</p>
+  <br/>
+</div><br/>
+
+<button *ngIf="empty==true" class="center" color="primary" mat-raised-button (click)="payTickets()">Pay Tickets</button>
+<p *ngIf="empty!=true" class="center" >You don't have any tickets to pay.</p>

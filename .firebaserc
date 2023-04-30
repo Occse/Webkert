@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "concertticketshop": {
+      "hosting": {
+        "Webkert": [
+          "concertticketshop"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "concertticketshop"
+  }
+}

@@ -1,0 +1,11 @@
+<h1 style="text-align: center">Available Tickets</h1>
+<div *ngFor="let ticket of tickets;index as i;" style="width: 75%; padding: 10px; box-shadow: 5px 10px 10px #aaaaaa;" class="center">
+  <br/>
+  <div *ngFor="let tick of ticket;index as j;">
+    <p *ngIf='j!=0 && j!=3 && j!=4' class="center">{{ticket[j]}}</p>
+    <img *ngIf='j==0' class="center" height="200" src="{{ticket[j]}}}" width="200">
+  </div>
+  <p class="center">{{ticket[4]|date: 'yyyy.MM.dd. EEEE, HH:mm z': 'UTC+2'}}</p>
+  <button class="center" color="primary" mat-raised-button (click)="addToCart($event, ticket)">{{ticket[3]}}</button>
+  <br/>
+</div><br/>
